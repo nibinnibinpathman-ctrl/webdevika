@@ -1,0 +1,880 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #09070a;
+    color: #f7eef2;
+
+    font-family: "Poppins", sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -10;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(139, 47, 82, 0.15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(89, 39, 67, 0.15),
+            transparent 35%
+        ),
+        #09070a;
+}
+
+.glow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    opacity: 0.15;
+}
+
+.glow-one {
+    background: #c7547c;
+
+    top: -200px;
+    left: -200px;
+}
+
+.glow-two {
+    background: #713d88;
+
+    right: -200px;
+    bottom: -200px;
+}
+
+
+/* =========================
+   NAV
+========================= */
+
+nav {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 25px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 100;
+}
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    font-weight: 600;
+}
+
+.logo span {
+    color: #e88da9;
+
+    margin-left: 5px;
+}
+
+#musicBtn {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    background: rgba(255,255,255,0.05);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   COMMON
+========================= */
+
+.eyebrow {
+    color: #db91aa;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Cormorant Garamond", serif;
+}
+
+h2 {
+    font-size: clamp(45px, 7vw, 90px);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+}
+
+p {
+    color: #bdb4ba;
+
+    line-height: 2;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+.hero-content {
+    max-width: 1000px;
+
+    animation: heroAppear 2s ease;
+}
+
+.tiny-title {
+    color: #d98ca5;
+
+    letter-spacing: 5px;
+
+    font-size: 10px;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 10vw, 125px);
+
+    line-height: 0.85;
+
+    font-weight: 500;
+}
+
+.hero h1 span {
+    color: #df779a;
+}
+
+.hero-content > p {
+    max-width: 600px;
+
+    margin: 40px auto;
+
+    font-size: 16px;
+}
+
+.begin-btn {
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid #8c5368;
+
+    padding: 17px 35px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+
+    letter-spacing: 1px;
+}
+
+.begin-btn span {
+    margin-left: 15px;
+}
+
+.begin-btn:hover {
+    background: #d97899;
+
+    color: #170b10;
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 20px 50px rgba(217,120,153,0.2);
+}
+
+.scroll-text {
+    position: absolute;
+
+    bottom: 30px;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color: #6d6269;
+}
+
+
+/* =========================
+   STORY
+========================= */
+
+.story-section {
+    min-height: 100vh;
+
+    padding: 150px 10%;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.section-number {
+    position: absolute;
+
+    top: 100px;
+    right: 8%;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 150px;
+
+    color: rgba(255,255,255,0.025);
+}
+
+.content {
+    max-width: 850px;
+}
+
+.content h2 {
+    margin-bottom: 50px;
+}
+
+.content p {
+    max-width: 650px;
+
+    margin: 20px 0;
+}
+
+.highlight {
+    color: #e99ab3;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+}
+
+
+/* =========================
+   APOLOGY
+========================= */
+
+.apology-section {
+    padding: 150px 6%;
+
+    display: flex;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(90,34,54,0.12),
+            transparent
+        );
+}
+
+.apology-card {
+    max-width: 850px;
+
+    text-align: center;
+
+    padding: 80px 60px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    background: rgba(255,255,255,0.025);
+
+    backdrop-filter: blur(20px);
+
+    border-radius: 3px;
+}
+
+.apology-card h2 {
+    color: #eea4ba;
+
+    margin-bottom: 25px;
+}
+
+.line {
+    width: 50px;
+
+    height: 1px;
+
+    background: #db7899;
+
+    margin: 30px auto;
+}
+
+.apology-card p {
+    max-width: 650px;
+
+    margin: 18px auto;
+}
+
+.big-quote {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(30px, 5vw, 48px);
+
+    line-height: 1.2;
+
+    color: #f3dbe2;
+
+    margin-top: 50px;
+}
+
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memories-section {
+    padding: 150px 7%;
+}
+
+.section-heading {
+    max-width: 900px;
+
+    margin-bottom: 70px;
+}
+
+.memory-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.memory-card {
+    background: #100d11;
+
+    border: 3px solid rgba(255,255,255,0.07);
+
+    transition: 0.5s;
+
+    height: auto;
+}
+
+.memory-card:hover {
+    transform: translateY(-12px);
+
+    border-color: #9b536d;
+}
+
+.memory-image {
+    height:350px;
+
+    background-size: cover;
+
+    background-position: center;
+
+    filter: grayscale(30%);
+}
+
+.image-one {
+    margin-bottom: 20px;
+    background:
+        linear-gradient(rgba(100,30,60,.2),rgba(0,0,0,.5)),
+        /* url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80"); */
+}
+
+.image-two {
+    background:
+        linear-gradient(rgba(100,30,60,.2),rgba(0,0,0,.5)),
+        /* url("https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80"); */
+}
+
+.image-three {
+    background:
+        linear-gradient(rgba(100,30,60,.2),rgba(0,0,0,.5)),
+        /* url("https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=800&q=80"); */
+}
+
+.memory-content {
+    padding: 50px;
+}
+
+.memory-content span {
+    color: #cf809b;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+.memory-content h3 {
+    font-size: 50px;
+
+    margin: 13px 0;
+}
+
+.memory-content p {
+    font-size: 17px;
+}
+
+
+/* =========================
+   LESSONS
+========================= */
+
+.lesson-section {
+    padding: 150px 8%;
+
+    background: #0d0a0e;
+}
+
+.lesson-container {
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+.lesson-container > h2 {
+    max-width: 800px;
+
+    margin-bottom: 80px;
+}
+
+.lessons {
+    border-top: 1px solid #30252c;
+}
+
+.lesson {
+    display: grid;
+
+    grid-template-columns: 80px 1fr;
+
+    gap: 30px;
+
+    padding: 35px 0;
+
+    border-bottom: 1px solid #30252c;
+}
+
+.lesson > span {
+    color: #d67e9c;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+}
+
+.lesson h3 {
+    font-size: 35px;
+
+    margin-bottom: 8px;
+}
+
+.lesson p {
+    max-width: 600px;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-section {
+    padding: 160px 20px;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.letter {
+    width: min(850px, 100%);
+
+    min-height: 600px;
+
+    padding: 80px;
+
+    background: #eee1d4;
+
+    color: #302127;
+
+    box-shadow: 0 40px 100px rgba(0,0,0,.5);
+
+    transform: rotate(-1deg);
+}
+
+.letter-top {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 35px;
+
+    margin-bottom: 40px;
+}
+
+#typingLetter {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    line-height: 1.8;
+
+    color: #403239;
+
+    white-space: normal;
+}
+
+.signature {
+    margin-top: 40px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    color: #8e465e;
+}
+
+
+/* =========================
+   FUTURE
+========================= */
+
+.future-section {
+    padding: 180px 8%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.future-content {
+    max-width: 900px;
+}
+
+.future-content h2 {
+    margin-bottom: 50px;
+}
+
+.future-content p {
+    max-width: 650px;
+
+    margin: 20px 0;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final-section {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(132,48,79,.25),
+            transparent 50%
+        );
+}
+
+.final-content {
+    max-width: 800px;
+}
+
+.heart-icon {
+    font-size: 50px;
+
+    color: #e784a4;
+
+    animation: heartbeat 1.5s infinite;
+
+    margin-bottom: 30px;
+}
+
+.final-content h2 {
+    font-size: clamp(60px, 10vw, 120px);
+
+    margin-bottom: 40px;
+}
+
+.final-content p {
+    max-width: 600px;
+
+    margin: 10px auto;
+}
+
+.choice-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-top: 45px;
+}
+
+.choice-buttons button {
+    padding: 17px 30px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    transition: .4s;
+
+    font-family: inherit;
+}
+
+#talkBtn {
+    background: #e784a4;
+
+    border: none;
+
+    color: #170a0f;
+}
+
+#timeBtn {
+    background: transparent;
+
+    border: 1px solid #674451;
+
+    color: white;
+}
+
+.choice-buttons button:hover {
+    transform: translateY(-5px);
+}
+
+#finalMessage {
+    margin-top: 40px;
+
+    color: #efa5bb;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 70px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid #211b20;
+}
+
+footer p {
+    font-size: 12px;
+
+    line-height: 2;
+}
+
+.footer-heart {
+    margin-top: 20px;
+
+    color: #df7999;
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-heart {
+    position: fixed;
+
+    bottom: -30px;
+
+    color: #dc7697;
+
+    pointer-events: none;
+
+    z-index: 50;
+
+    animation: floatUp linear forwards;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes heroAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatUp {
+
+    from {
+        transform: translateY(0) rotate(0);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .8;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 750px) {
+
+    nav {
+        padding: 20px;
+    }
+
+    .hero {
+        padding: 30px 20px;
+    }
+
+    .story-section,
+    .memories-section,
+    .lesson-section,
+    .future-section {
+        padding: 100px 25px;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-image {
+        height: 300px;
+    }
+
+    .apology-card {
+        padding: 50px 25px;
+    }
+
+    .lesson {
+        grid-template-columns: 40px 1fr;
+    }
+
+    .letter {
+        padding: 45px 30px;
+
+        transform: none;
+    }
+
+    #typingLetter {
+        font-size: 21px;
+    }
+
+    .section-number {
+        display: none;
+    }
+
+}
